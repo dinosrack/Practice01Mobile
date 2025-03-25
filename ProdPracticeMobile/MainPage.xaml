@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProdPracticeMobile.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <StackLayout Padding="10">
+                <Label Text="Рыночные предложения" 
+               FontSize="24"
+               HorizontalTextAlignment="Center" />
+                <Border Margin="25"/>
+
+                <CollectionView x:Name="collectionView"
+                VerticalOptions="FillAndExpand"
+                SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                    <Frame Padding="15"
+                            CornerRadius="10"
+                            BackgroundColor="#E1E1E1"
+                            BorderColor="Black">
+
+                    <StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="Код предложения: " FontAttributes="Bold"/>
+                        <Label Text="{Binding Id}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="Модель компьютера: " FontAttributes="Bold"/>
+                        <Label Text="{Binding ComputerName}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="Продавец: " FontAttributes="Bold"/>
+                        <Label Text="{Binding SellerName}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="Размер партии: " FontAttributes="Bold"/>
+                        <Label Text="{Binding BatchSize}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="Цена партии: " FontAttributes="Bold"/>
+                        <Label Text="{Binding BatchPrice}"/>
+                    </StackLayout>
+                    </StackLayout>
+                    </Frame>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
